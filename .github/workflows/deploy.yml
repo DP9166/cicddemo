@@ -25,5 +25,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SERVER_PORT }}
-          local-dir: ./
-          server-dir: /www/wwwroot/cicddemo/
+          script: |
+            cd /www/wwwroot/cicddemo
+            git pull origin main

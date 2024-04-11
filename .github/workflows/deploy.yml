@@ -19,9 +19,10 @@ jobs:
           php-version: '7.4'
 
       - name: Deploy to server
-        uses: easingthemes/ssh-deploy@v2
+        uses: appleboy/ssh-action@v1.0.3
         with:
-          server: ${{ secrets.SERVER }}
+          host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SERVER_PORT }}
           script: "whoami"
